@@ -15,4 +15,8 @@ class ShoppingCart
     @capacity.partition("i")[0].to_i
   end
 
+  def add_product(product)
+    @products << product
+  end
+
 end
