@@ -54,4 +54,19 @@ class ShoppingCart
     @products.sort{ |product| product.quantity}
   end
 
+  def product_breakdown
+    hash = {meat: nil, produce: nil, paper: nil}
+
+    @products.each do |product|
+      if product.category == :meat
+        hash[:meat] = product
+      elsif product.category == :produce
+        hash[:produce] = product
+      elsif product.category == :paper
+        hash[:paper] = product
+      end
+    end
+    hash
+  end
+
 end
