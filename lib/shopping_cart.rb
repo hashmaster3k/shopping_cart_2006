@@ -25,13 +25,17 @@ class ShoppingCart
 
   def total_number_of_products
     total_quantity = 0
-    index = 0
 
     @products.each do |product|
       total_quantity += product.quantity
     end
 
     total_quantity
+  end
+
+  def is_full?
+    return true  if total_number_of_products >= capacity
+    return false if total_number_of_products < capacity
   end
 
 end
