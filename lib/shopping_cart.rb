@@ -1,12 +1,14 @@
+require './lib/product'
 require 'pry'
 
 class ShoppingCart
 
-  attr_reader :name
+  attr_reader :name, :products
 
   def initialize(name, capacity)
     @name = name
     @capacity = capacity
+    @products = []
   end
 
   def capacity

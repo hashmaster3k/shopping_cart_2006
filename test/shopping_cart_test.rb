@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/product'
 require './lib/shopping_cart'
+require 'pry'
 
 class ShoppingCartTest < Minitest::Test
 
@@ -21,6 +22,12 @@ class ShoppingCartTest < Minitest::Test
     cart = ShoppingCart.new("King Soopers", "30items")
 
     assert_equal 30, cart.capacity
+  end
+
+  def test_has_empty_cart
+    cart = ShoppingCart.new("King Soopers", "30items")
+
+    assert_equal [], cart.products
   end
 
 end
