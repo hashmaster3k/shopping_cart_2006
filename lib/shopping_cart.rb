@@ -38,4 +38,10 @@ class ShoppingCart
     return false if total_number_of_products < capacity
   end
 
+  def products_by_category(requested_category)
+    @products.find_all do |product|
+      product.category == requested_category
+    end
+  end
+
 end
