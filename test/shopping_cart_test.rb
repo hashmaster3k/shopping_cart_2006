@@ -6,6 +6,7 @@ require 'pry'
 
 class ShoppingCartTest < Minitest::Test
 
+  # iteration 2
   def test_it_exists
     cart = ShoppingCart.new("King Soopers", "30items")
 
@@ -47,6 +48,20 @@ class ShoppingCartTest < Minitest::Test
     hash = {name: "King Soopers", capacity: 30}
 
     assert_equal hash, cart.details
+  end
+
+  #iteration 3
+  def test_has_total_number_products
+    cart = ShoppingCart.new("King Soopers", "30items")
+    product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+    product2 = Product.new(:meat, 'chicken', 4.50, '2')
+    product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+
+    cart.add_product(product1)
+    cart.add_product(product2)
+    cart.add_product(product3)
+
+    assert_equal 13, cart.total_number_of_products
   end
 
 end
